@@ -24,4 +24,37 @@ $("#submit").on("click", function (event) {
     $("#search").val("");
 });
 
+$(document).on("click", '.button', function () {
+    var searchTerm = $(this).attr("data-name");
+
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        searchTerm + "&api_key=H4jeniUwGmYUKDr5HOc3imPyMjABQoWG&limit=10";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(queryURL);
+
+        console.log(response);
+
+        var results = response.data;
+
+        for (var i = 0; i < results.length; i++) {
+
+            var newGif = $("<div>");
+
+            var p = $("<p>").text("Rating: " + results[i].rating);
+
+            var gifImage = $("<img>");
+            gifImage.attr("src", results[i].images.fixed_height.url);
+
+            newGif.append(p);
+            newGif.append(gifImage);
+
+            $("#gifs").prepend(newGif);
+        }
+    });
+});
+
 renderButtons();
