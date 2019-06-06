@@ -20,7 +20,8 @@
 
     <div class="row no-gutters">
         <div class="col-md-12">
-            <button class="btn btn-primary" type="submit">Button</button>
+            <div id="buttons-view">
+            </div>
         </div>
     </div>
 
@@ -38,12 +39,20 @@
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <form>
+                        <div class="form-group">
+                            <label>Search Term: </label>
+                            <input type="text" class="form-control" id="search"
+                                placeholder="Search Term">
+                        </div>
+                        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
 
