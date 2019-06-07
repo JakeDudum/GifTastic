@@ -24,6 +24,18 @@ $("#submit").on("click", function (event) {
     $("#search").val("");
 });
 
+$(document).on("click", '.gif', function () {
+    var state = $(this).attr("data-state");
+
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+});
+
 $(document).on("click", '.button', function () {
     var searchTerm = $(this).attr("data-name");
 
@@ -47,7 +59,11 @@ $(document).on("click", '.button', function () {
             var p = $("<p>").text("Rating: " + results[i].rating);
 
             var gifImage = $("<img>");
-            gifImage.attr("src", results[i].images.fixed_height.url);
+            gifImage.attr("src", results[i].images.fixed_height_still.url);
+            gifImage.attr('data-still', results[i].images.fixed_height_still.url);
+            gifImage.attr('data-animate', results[i].images.fixed_height.url);
+            gifImage.attr('data-state', "still");
+            gifImage.addClass("gif");
 
             newGif.append(p);
             newGif.append(gifImage);
