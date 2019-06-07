@@ -15,7 +15,6 @@ html {
     background-image: url("../images/iphone.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    z-index: 1;
 }
 
 #white {
@@ -29,7 +28,7 @@ html {
 
 #wrapper {
     margin-top: 4vh;
-    margin-left: 8vw;
+    margin-left: 10vw;
     margin-right: -35vw;
     padding-bottom: 70vh;
     height: 60vh;

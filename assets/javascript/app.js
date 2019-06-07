@@ -1,14 +1,14 @@
 
-var buttons = ["Anime", "Rainbow Six Siege", "Iron Man", "Pizza", "Memes", "World of Warcraft", "The Simpsons", "Video Games", "PC Master Race", "Pewdiepie", ];
+var topics = ["anime", "rainbow six siege", "iron man", "pizza", "memes", "world of warcraft", "the simpsons", "video games", "pc master race", "pewdiepie",];
 
 function renderButtons() {
     $("#buttons-view").empty();
-    for (var i = 0; i < buttons.length; i++) {
+    for (var i = 0; i < topics.length; i++) {
 
         var newButton = $("<button>");
         newButton.addClass("button btn btn-primary btn-lg");
-        newButton.attr("data-name", buttons[i]);
-        newButton.text(buttons[i]);
+        newButton.attr("data-name", topics[i]);
+        newButton.text(topics[i]);
         $("#buttons-view").append(newButton);
     }
 }
@@ -16,8 +16,8 @@ function renderButtons() {
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
-    var button = $("#search").val().trim();
-    buttons.push(button);
+    var topic = $("#search").val().trim();
+    topics.push(topic);
 
     renderButtons();
 
@@ -37,6 +37,10 @@ $(document).on("click", '.gif', function () {
 });
 
 $(document).on("click", '.button', function () {
+
+    $("#gifs1").empty();
+    $("#gifs2").empty();
+
     var searchTerm = $(this).attr("data-name");
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
