@@ -1,12 +1,12 @@
 
-var buttons = ["Anime", "Rainbow Six Siege", "Iron Man", "Pizza"];
+var buttons = ["Anime", "Rainbow Six Siege", "Iron Man", "Pizza", "Memes", "World of Warcraft", "The Simpsons", "Video Games", "PC Master Race", "Pewdiepie", ];
 
 function renderButtons() {
     $("#buttons-view").empty();
     for (var i = 0; i < buttons.length; i++) {
 
         var newButton = $("<button>");
-        newButton.addClass("button btn btn-primary");
+        newButton.addClass("button btn btn-primary btn-lg");
         newButton.attr("data-name", buttons[i]);
         newButton.text(buttons[i]);
         $("#buttons-view").append(newButton);
@@ -69,7 +69,11 @@ $(document).on("click", '.button', function () {
             newGif.append(p);
             newGif.append(gifImage);
 
-            $("#gifs").prepend(newGif);
+            if (i < 5) {
+                $("#gifs1").prepend(newGif);
+            } else {
+                $("#gifs2").prepend(newGif);
+            }
         }
     });
 });
