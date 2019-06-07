@@ -1,6 +1,23 @@
-#gifs {
+#iphone {
     background-image: url("../images/iphone.png");
     background-size: 100%;
     background-repeat: no-repeat;
     height: 70vh;
+}
+
+.wrapper {
+    width: 110vw;
+    overflow: hidden;
+}
+
+#gifs {
+    position: absolute;
+    margin-left: 8vw;
+    margin-top: 4vh;
+}
+
+.rating {
+    position: absolute;
+    margin-bottom: -2vh;
+    color: white;
 }
