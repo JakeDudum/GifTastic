@@ -57,6 +57,7 @@ $(document).on("click", '.button', function () {
             var newGif = $("<div>");
 
             var p = $("<p>").text("Rating: " + results[i].rating);
+            p.addClass("rating");
 
             var gifImage = $("<img>");
             gifImage.attr("src", results[i].images.fixed_height_still.url);
